@@ -26,7 +26,7 @@ exports.run = async (bot, message, args) => {
   const reactions = await msg.awaitReactions(reaction => reaction.emoji.name === agree || reaction.emoji.name === disagree, {time: 10000});
   msg.delete();
 
-  var NO_Count = reactions.get(disagree).count;
+  var NO_Count = reactions.get(disagree);
   var YES_Count = reactions.get(agree);
 
   if(YES_Count == undefined){
